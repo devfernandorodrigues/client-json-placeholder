@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "client-json-placeholder"
+version = "0.1.0"
+description = ""
+authors = ["Fernando Rodrigues <devfernandorodrigues@gmail.com>"]
+readme = "README.md"
+packages = [{include = "client_json_placeholder"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.28.2"
+pydantic = "^1.10.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"
+pytest-cov = "^4.0.0"
+black = "^23.1.0"
+isort = "^5.12.0"
+taskipy = "^1.10.3"
+pytest-mock = "^3.10.0"
+responses = "^0.22.0"
+faker = "^17.6.0"
+pre-commit = "^3.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint = "black --line-length 79 . && isort ."
+test = "pytest -s -x --cov=. -vv"
