@@ -1,11 +1,11 @@
 repos:
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
-    hooks:
-      - id: flake8
   - repo: local
     hooks:
       - id: lint
         language: system
         name: lint
         entry: task lint
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
