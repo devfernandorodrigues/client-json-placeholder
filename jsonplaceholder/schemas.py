@@ -39,3 +39,15 @@ class Album(BaseModel):
     class Config:
         alias_generator = camel
         allow_population_by_field_name = True
+
+
+class Photo(BaseModel):
+    id: Optional[int]
+    album_id: int = Field(..., alias="albumId")
+    title: str
+    url: str
+    thumbnail_url: str = Field(..., alias="thumbnailUrl")
+
+    class Config:
+        alias_generator = camel
+        allow_population_by_field_name = True

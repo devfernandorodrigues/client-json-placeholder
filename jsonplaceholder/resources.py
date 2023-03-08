@@ -1,6 +1,6 @@
 from jsonplaceholder.base import BaseResource
 from jsonplaceholder.request import request
-from jsonplaceholder.schemas import Album, Comment, Post
+from jsonplaceholder.schemas import Album, Comment, Photo, Post
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
@@ -26,3 +26,8 @@ class CommentResource(BaseResource):
 class AlbumResource(BaseResource):
     ENDPOINT = f"{BASE_URL}/albums"
     schema = Album
+
+
+class PhotoResource(BaseResource):
+    ENDPOINT = f"{BASE_URL}/photos"
+    schema = Photo
