@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "client-json-placeholder"
+name = "jsonplaceholderclient"
 version = "0.1.0"
 description = ""
 authors = ["Fernando Rodrigues <devfernandorodrigues@gmail.com>"]
 readme = "README.md"
-packages = [{include = "client_json_placeholder"}]
+packages = [{include = "jsonplaceholderclient"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
