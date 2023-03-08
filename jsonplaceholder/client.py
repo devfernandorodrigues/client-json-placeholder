@@ -1,6 +1,11 @@
-from jsonplaceholder.resources import CommentsResource, PostResource
+from jsonplaceholder.resources import (
+    AlbumResource,
+    CommentResource,
+    PostResource,
+)
 
 
 class JsonPlaceholderClient:
     Post = PostResource()
-    Comment = CommentsResource()
+    Comment = CommentResource()
+    Album = AlbumResource()

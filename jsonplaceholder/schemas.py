@@ -29,3 +29,13 @@ class Comment(BaseModel):
     class Config:
         alias_generator = camel
         allow_population_by_field_name = True
+
+
+class Album(BaseModel):
+    id: Optional[int]
+    user_id: int = Field(..., alias="userId")
+    title: str
+
+    class Config:
+        alias_generator = camel
+        allow_population_by_field_name = True
