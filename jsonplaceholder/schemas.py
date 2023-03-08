@@ -21,7 +21,7 @@ class Post(BaseModel):
 
 class Comment(BaseModel):
     post_id: int = Field(..., alias="postId")
-    id: int
+    id: Optional[int]
     name: str
     email: str
     body: str
