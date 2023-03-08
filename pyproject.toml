@@ -10,6 +10,7 @@ packages = [{include = "client_json_placeholder"}]
 python = "^3.11"
 requests = "^2.28.2"
 pydantic = "^1.10.5"
+pyhumps = "^3.8.0"
 
 
 [tool.poetry.group.dev.dependencies]
