@@ -3,16 +3,9 @@ import re
 import responses
 from responses import matchers
 
-from jsonplaceholder.schemas import Comment, Post
-
 
 @responses.activate
-def test_create_call_with_camel_case(client, faker):
-    post = Post(
-        body=faker.pystr(),
-        title=faker.pystr(),
-        user_id=faker.pyint(),
-    )
+def test_create_call_with_camel_case(client, faker, post):
     responses.add(
         responses.POST,
         re.compile(r"^.+posts$"),
@@ -38,15 +31,7 @@ def test_create_call_with_camel_case(client, faker):
 
 
 @responses.activate
-def test_comments(client, faker):
-    comment = Comment(
-        post_id=faker.pyint(),
-        id=faker.pyint(),
-        name=faker.pystr(),
-        email=faker.email(),
-        body=faker.pystr(),
-    )
-
+def test_comments(client, comment):
     responses.add(
         responses.GET,
         re.compile(r"^.+comments$"),

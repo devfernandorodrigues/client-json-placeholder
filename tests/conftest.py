@@ -1,7 +1,7 @@
 import pytest
 
 from jsonplaceholder.client import JsonPlaceholderClient
-from jsonplaceholder.schemas import Comment
+from jsonplaceholder.schemas import Comment, Post
 
 
 @pytest.fixture
@@ -17,4 +17,13 @@ def comment(faker):
         id=faker.pyint(),
         name=faker.pystr(),
         postId=faker.pyint(),
+    )
+
+
+@pytest.fixture
+def post(faker):
+    return Post(
+        body=faker.pystr(),
+        title=faker.pystr(),
+        user_id=faker.pyint(),
     )
