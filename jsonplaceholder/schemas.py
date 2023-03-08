@@ -62,3 +62,33 @@ class Todo(BaseModel):
     class Config:
         alias_generator = camel
         allow_population_by_field_name = True
+
+
+class Geo(BaseModel):
+    lat: str
+    lng: str
+
+
+class Address(BaseModel):
+    geo: Geo
+    street: str
+    suite: str
+    city: str
+    zipcode: str
+
+
+class Company(BaseModel):
+    name: str
+    catch_phrase: str = Field(None, alias="catchPhrase")
+    bs: str
+
+
+class User(BaseModel):
+    id: Optional[int]
+    name: str
+    username: str
+    email: str
+    address: Address
+    phone: str
+    website: str
+    company: Company

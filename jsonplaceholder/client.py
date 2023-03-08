@@ -4,6 +4,7 @@ from jsonplaceholder.resources import (
     PhotoResource,
     PostResource,
     TodoResource,
+    UserResource,
 )
 
 
@@ -13,3 +14,4 @@ class JsonPlaceholderClient:
     Album = AlbumResource()
     Photo = PhotoResource()
     Todo = TodoResource()
+    User = UserResource()
