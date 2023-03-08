@@ -82,6 +82,10 @@ class Company(BaseModel):
     catch_phrase: str = Field(None, alias="catchPhrase")
     bs: str
 
+    class Config:
+        alias_generator = camel
+        allow_population_by_field_name = True
+
 
 class User(BaseModel):
     id: Optional[int]
