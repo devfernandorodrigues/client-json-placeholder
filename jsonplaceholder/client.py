@@ -3,6 +3,7 @@ from jsonplaceholder.resources import (
     CommentResource,
     PhotoResource,
     PostResource,
+    TodoResource,
 )
 
 
@@ -11,3 +12,4 @@ class JsonPlaceholderClient:
     Comment = CommentResource()
     Album = AlbumResource()
     Photo = PhotoResource()
+    Todo = TodoResource()

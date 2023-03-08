@@ -51,3 +51,14 @@ class Photo(BaseModel):
     class Config:
         alias_generator = camel
         allow_population_by_field_name = True
+
+
+class Todo(BaseModel):
+    id: Optional[int]
+    user_id: int = Field(..., alias="userId")
+    title: str
+    completed: bool
+
+    class Config:
+        alias_generator = camel
+        allow_population_by_field_name = True
